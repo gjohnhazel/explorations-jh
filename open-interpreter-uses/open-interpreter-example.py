@@ -1,7 +1,9 @@
 from interpreter import interpreter
+import os
+from dotenv import load_dotenv
 
 # Open Interpreter Settings
-interpreter.llm.api_key = "openai_api_key_here"
+interpreter.llm.api_key = os.getenv("OPENAI_API_KEY")
 interpreter.llm.model = "gpt-3.5-turbo"
 interpreter.auto_run = True
 interpreter.custom_instructions = "I love markdown."
